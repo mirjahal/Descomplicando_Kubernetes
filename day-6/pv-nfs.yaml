@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    storage: nfs
+  name: meu-pv-nfs
+spec:
+  capacity:
+    storage: 5Mi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 172.17.188.192
+    path: "/mnt/nfs"
+  storageClassName: nfs
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kind-worker
+          - kind-worker2
+          - kind-worker3
