@@ -9,7 +9,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Mi
+      storage: 1Gi
   storageClassName: nfs
   selector:
     matchLabels:
