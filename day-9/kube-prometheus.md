@@ -14,7 +14,7 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/d
 sudo mv /tmp/eksctl /usr/local/bin
 
 # Creating a cluster
-eksctl create cluster --name=eks-cluster --version=1.24 --region=us-east-1 --nodegroup-name=eks-cluster-nodegroup --node-type=t3.medium --nodes=2 --nodes-min=1 --nodes-max=3 --managed
+eksctl create cluster --name=eks-cluster --version=1.29 --region=us-east-1 --nodegroup-name=eks-cluster-nodegroup --node-type=t3.medium --nodes=2 --nodes-min=1 --nodes-max=3 --managed
 
 # Update kube config
 aws eks --region us-east-1 update-kubeconfig --name eks-cluster
