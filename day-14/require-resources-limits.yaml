@@ -10,6 +10,10 @@ spec:
       resources:
         kinds:
         - Pod
+    exclude:
+      resources:
+        namespaces:
+        - namespace-where-the-policy-will-not-be-applied
     validate:
       message: "Precisa definir os limites de recursos"
       pattern:
