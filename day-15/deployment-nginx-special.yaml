@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deployment-special
+  name: nginx-deployment-special
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-deployment-special
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment-special
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+      tolerations:
+      - key: "special"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
