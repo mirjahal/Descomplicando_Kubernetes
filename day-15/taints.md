@@ -42,7 +42,7 @@ spec:
 ```
 
 Removing taint
-Put negative sign at last letter
+Put negative sign after last letter
 
 ```
 kubectl taint node kind-worker maintenance=true:NoExecute-
