@@ -4,6 +4,11 @@
 eksctl create cluster --name=eks-cluster --version=1.35 --region=us-east-1 --nodegroup-name=eks-cluster-nodegroup --node-type=t3.medium --nodes=2 --nodes-min=1 --nodes-max=3 --managed
 ```
 
+# eksctl delete cluster
+```
+eksctl delete cluster --name=eks-cluster -r us-east-1
+```
+
 # vpc-cni addon
 
 To check if the Amazon VPC CNI plugin is installed in your Kubernetes cluster, you can use several methods depending on whether it is a managed EKS add-on or a self-managed installation.
